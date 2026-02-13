@@ -1,3 +1,4 @@
+name: "Inputs Pipeline"
 on:
   workflow_dispatch:
     inputs:
