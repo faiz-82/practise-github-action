@@ -2,15 +2,23 @@ name: "Inputs Pipeline"
 on:
   workflow_dispatch:
     inputs:
+      branch:
+        description: 'Branch to run against'
+        required: true
+        type: choice
+        default: main
+        options:
+          - main
+          - develop
       logLevel:
         description: 'Log level'
         required: true
         default: 'warning'
         type: choice
         options:
-        - info
+        - infoa
         - warning
-        - debug
+        - debuga
       tags:
         description: 'Test scenario tags'
         required: false
