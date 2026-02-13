@@ -2,14 +2,6 @@ name: "Inputs Pipeline"
 on:
   workflow_dispatch:
     inputs:
-      branch:
-        description: 'Branch to run against'
-        required: true
-        type: choice
-        default: main
-        options:
-          - main
-          - develop
       logLevel:
         description: 'Log level'
         required: true
@@ -25,8 +17,12 @@ on:
         type: boolean
       environment:
         description: 'Environment to run tests against'
-        type: environment
+        type: choice
         required: true
+        options:
+        - dev
+        - stage
+        - prod
 
 jobs:
   log-the-inputs:
